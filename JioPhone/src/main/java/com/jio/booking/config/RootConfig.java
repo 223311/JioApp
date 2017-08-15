@@ -29,7 +29,7 @@ public class RootConfig {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(environment.getRequiredProperty(DRIVER_CLASS));
 		dataSource.setUrl(environment.getRequiredProperty(URL));
-		dataSource.setUsername(environment.getRequiredProperty(PASSWORD));
+		dataSource.setUsername(environment.getRequiredProperty(USERNAME));
 		dataSource.setPassword(environment.getRequiredProperty(PASSWORD));
 		return dataSource;
 
