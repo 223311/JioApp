@@ -3,6 +3,7 @@ package com.jio.booking.config;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,10 +45,11 @@ public class RootConfig {
 	}
 
 	@Bean
-	public static HibernateTemplate getHibernateTemplate() {
+	@Autowired
+	public static HibernateTemplate getHibernateTemplate(SessionFactory s) {
 		HibernateTemplate hb = new HibernateTemplate();
-
-		return null;
+		hb.setSessionFactory(s);
+		return hb;
 	}
 
 }
