@@ -1,5 +1,7 @@
 package com.jio.booking.config;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -41,7 +43,17 @@ public class RootConfig {
 		factory.setDataSource(createDataSource());
 		factory.setAnnotatedPackages("com.jio.booking.model");
 		factory.setAnnotatedClasses(new Class<?>[] { Model.class });
+		factory.setHibernateProperties(hibernateProperties());
 		return factory;
+	}
+
+	private static Properties hibernateProperties() {
+		Properties properties = new Properties();
+		properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
+		properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
+		properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
+		properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
+		return properties;
 	}
 
 	@Bean
