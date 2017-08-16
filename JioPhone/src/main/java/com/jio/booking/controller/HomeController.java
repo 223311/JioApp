@@ -18,24 +18,12 @@ import com.jio.booking.model.User;
  * @author Optimus Prime
  */
 @Controller
-@RequestMapping("/home")
 public class HomeController {
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String home() {
-		return "home";
+		return "jio-phone-booking-1500";
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String register(@ModelAttribute("user") User user) {
-
-		return null;
-	}
-
-	@RequestMapping(method = RequestMethod.POST)
-	public String register(BindingResult result) {
-
-		return null;
-	}
 
 }
