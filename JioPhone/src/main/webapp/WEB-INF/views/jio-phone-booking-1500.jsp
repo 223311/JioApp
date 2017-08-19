@@ -8,10 +8,6 @@ src:url(resources/JioTypeW04-Light.eot);
 *{
 font-family:"JioTypeW04-Light";
 }
-
-.container {
-    background-image: url("resources/jio-phone-free.png");
-}
 </style>
 
 <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
@@ -36,10 +32,12 @@ font-family:"JioTypeW04-Light";
 <div class="panel panel-primary">
 <!-- Form Name -->
     <div class="panel-heading">
-<h2 class="panel-title">Reliance Jio Phone Booking Form</h2>
+<h1 class="panel-title">Reliance Jio Phone Booking at Rs.1500</h1>
 </div>
 <div class="panel-body">
 <div class="container">
+
+<h2>Jio Phone Pre Booking Subscription From</h2>
 <form class="well form-horizontal" action=" " method="post"  id="contact_form">
 <!-- Text input-->
 
