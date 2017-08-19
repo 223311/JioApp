@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html class=''>
 <head>
+<style type="text/css">
+@font-face{font-family:JioTypeW04-Light;
+src:url(resources/JioTypeW04-Light.eot);
+}
+*{
+font-family:"JioTypeW04-Light";
+}
+
+.container {
+    background-image: url("resources/jio-phone-free.png");
+}
+</style>
+
 <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
 <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
 <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
@@ -20,18 +33,14 @@
 </head>
 
 <body>
-    <div class="container">
-
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-<fieldset>
-
+<div class="panel panel-primary">
 <!-- Form Name -->
-<legend>
-<center><h2><b>Reliance Jio Phone Booking Form</b></h2>
-<img src="resources/jio-phone-free.png"/>
-</center>
-</legend><br>
-
+    <div class="panel-heading">
+<h2 class="panel-title">Reliance Jio Phone Booking Form</h2>
+</div>
+<div class="panel-body">
+<div class="container">
+<form class="well form-horizontal" action=" " method="post"  id="contact_form">
 <!-- Text input-->
 
 <div class="form-group">
@@ -58,8 +67,8 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="department" class="form-control selectpicker">
-      <option value="">Select your Department/Office</option>
+    <select name="state" class="form-control selectpicker">
+      <option value="">Select State</option>
       <option>Department of Engineering</option>
       <option>Department of Agriculture</option>
       <option >Accounting Office</option>
@@ -80,7 +89,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Username" class="form-control"  type="text">
+  <input  name="address" placeholder="Address" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -91,7 +100,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+  <input name="city" placeholder="City" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -102,7 +111,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+  <input name="pincode" placeholder="Pin Code" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -120,14 +129,16 @@
 
 <!-- Text input-->
        
-<div class="form-group">
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="contact_no" placeholder="(639)" class="form-control" type="text">
-    </div>
-  </div>
-</div>
+	<div class="form-group">
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-earphone"></i></span> <input
+								name="contact_no" placeholder="+91" class="form-control"
+								type="text">
+						</div>
+					</div>
+				</div>
 
 <!-- Select Basic -->
 
@@ -141,9 +152,8 @@
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
   </div>
 </div>
-
-</fieldset>
 </form>
+</div>
 </div>
     </div><!-- /.container -->
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
@@ -176,33 +186,33 @@
                     }
                 }
             },
-			 user_name: {
+			 address: {
                 validators: {
                      stringLength: {
                         min: 8,
                     },
                     notEmpty: {
-                        message: 'Please enter your Username'
+                        message: 'Please enter your Address'
                     }
                 }
             },
-			 user_password: {
+			 city: {
                 validators: {
                      stringLength: {
                         min: 8,
                     },
                     notEmpty: {
-                        message: 'Please enter your Password'
+                        message: 'Please enter City'
                     }
                 }
             },
-			confirm_password: {
+			pincode: {
                 validators: {
                      stringLength: {
                         min: 8,
                     },
                     notEmpty: {
-                        message: 'Please confirm your Password'
+                        message: 'Please enter PinCode'
                     }
                 }
             },
@@ -226,10 +236,10 @@
                      }
                 }
             },
-			 department: {
+			 state: {
                 validators: {
                     notEmpty: {
-                        message: 'Please select your Department/Office'
+                        message: 'Please select your State'
                     }
                 }
             },
