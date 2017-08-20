@@ -17,11 +17,12 @@ public class JioBookingServiceImpl implements JioBookingService {
 	@Override
 	public void bookJioPhone(UserForm userForm) {
 		User user = new User();
-		user.setFirstName(userForm.getFirstName());
-		user.setLastname(userForm.getLastname());
+		user.setFullName(userForm.getFullName());
 		user.setMobileNo(userForm.getMobileNo());
 		user.setEmail(userForm.getEmail());
-		user.setPincode(userForm.getPincode());
+		user.setAddress(userForm.getAddress());
+		user.setCity(userForm.getCity());
+		user.setPinCode(userForm.getPincode());
 		userdao.save(user);
 	}
 

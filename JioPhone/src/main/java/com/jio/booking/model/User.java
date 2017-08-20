@@ -17,16 +17,18 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "FIRST_NAME", nullable = false, length = 50)
-	private String firstName;
-	@Column(name = "LAST_NAME", nullable = false, length = 50)
-	private String lastname;
+	@Column(name = "FULL_NAME", nullable = false, length = 50)
+	private String fullName;
 	@Column(name = "MOBILE_NO", nullable = false, length = 12)
 	private String mobileNo;
 	@Column(name = "EMAIL", nullable = false, length = 40)
 	private String email;
-	@Column(name = "FIRST_NAME", nullable = false, length = 7)
-	private String pincode;
+	@Column(name = "ADDRESS", nullable = false, length = 50)
+	private String address;
+	@Column(name = "CITY", nullable = false, length = 50)
+	private String city;
+	@Column(name = "PIN_CODE", nullable = false, length = 7)
+	private String pinCode;
 
 	public int getId() {
 		return id;
@@ -36,20 +38,12 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getMobileNo() {
@@ -68,24 +62,45 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getPincode() {
-		return pincode;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPinCode() {
+		return pinCode;
+	}
+
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
 		result = prime * result + id;
-		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
 		result = prime * result + ((mobileNo == null) ? 0 : mobileNo.hashCode());
-		result = prime * result + ((pincode == null) ? 0 : pincode.hashCode());
+		result = prime * result + ((pinCode == null) ? 0 : pinCode.hashCode());
 		return result;
 	}
 
@@ -98,32 +113,37 @@ public class User implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
 		if (email == null) {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (firstName == null) {
-			if (other.firstName != null)
+		if (fullName == null) {
+			if (other.fullName != null)
 				return false;
-		} else if (!firstName.equals(other.firstName))
+		} else if (!fullName.equals(other.fullName))
 			return false;
 		if (id != other.id)
-			return false;
-		if (lastname == null) {
-			if (other.lastname != null)
-				return false;
-		} else if (!lastname.equals(other.lastname))
 			return false;
 		if (mobileNo == null) {
 			if (other.mobileNo != null)
 				return false;
 		} else if (!mobileNo.equals(other.mobileNo))
 			return false;
-		if (pincode == null) {
-			if (other.pincode != null)
+		if (pinCode == null) {
+			if (other.pinCode != null)
 				return false;
-		} else if (!pincode.equals(other.pincode))
+		} else if (!pinCode.equals(other.pinCode))
 			return false;
 		return true;
 	}
@@ -133,31 +153,18 @@ public class User implements Serializable {
 		StringBuilder builder = new StringBuilder();
 		builder.append("User [id=");
 		builder.append(id);
-		builder.append(", ");
-		if (firstName != null) {
-			builder.append("firstName=");
-			builder.append(firstName);
-			builder.append(", ");
-		}
-		if (lastname != null) {
-			builder.append("lastname=");
-			builder.append(lastname);
-			builder.append(", ");
-		}
-		if (mobileNo != null) {
-			builder.append("mobileNo=");
-			builder.append(mobileNo);
-			builder.append(", ");
-		}
-		if (email != null) {
-			builder.append("email=");
-			builder.append(email);
-			builder.append(", ");
-		}
-		if (pincode != null) {
-			builder.append("pincode=");
-			builder.append(pincode);
-		}
+		builder.append(", fullName=");
+		builder.append(fullName);
+		builder.append(", mobileNo=");
+		builder.append(mobileNo);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", address=");
+		builder.append(address);
+		builder.append(", city=");
+		builder.append(city);
+		builder.append(", pinCode=");
+		builder.append(pinCode);
 		builder.append("]");
 		return builder.toString();
 	}
