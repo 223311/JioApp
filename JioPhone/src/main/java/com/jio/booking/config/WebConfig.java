@@ -11,7 +11,7 @@ import org.springframework.web.servlet.resource.GzipResourceResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.jio.booking" })
+@ComponentScan(basePackages = { "com.jio.booking.controller" })
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Override

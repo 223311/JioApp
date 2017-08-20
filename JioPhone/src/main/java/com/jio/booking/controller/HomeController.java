@@ -5,12 +5,14 @@
  */
 package com.jio.booking.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jio.booking.bo.UserForm;
+import com.jio.booking.service.JioBookingService;
 
 /**
  *
@@ -19,17 +21,25 @@ import com.jio.booking.bo.UserForm;
 @Controller
 public class HomeController {
 
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@Autowired
+	private JioBookingService service;
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "redirect:free-jio-phone-pre-booking";
 	}
 
-	@RequestMapping(value="free-jio-phone-pre-booking", method = RequestMethod.GET)
+	@RequestMapping(value = "free-jio-phone-pre-booking", method = RequestMethod.GET)
 	public String bookingForm(@ModelAttribute("booking") UserForm form) {
 		return "free-jio-phone-pre-booking";
 	}
-	
-	
-	
+
+	@RequestMapping(value = "book-now", method = RequestMethod.POST)
+	public String bookingFormSubmit(@ModelAttribute("booking") UserForm form) {
+		System.out.println(form);
+		service.bookJioPhone(form);
+
+		return "redirect:/#menu1";
+	}
 
 }

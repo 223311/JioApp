@@ -49,41 +49,41 @@
                            
                             <div class="info-section">
                              
-                                <spring:form action="">
+                                <spring:form action="book-now" commandName="booking">
                                   <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-id-card fa-lg"></i></span>
-                                        <input id="" type="text" class="form-control" name="name" placeholder="Full Name" value="Full Name">
+                                        <spring:input id="" type="text" class="form-control" path="fullName" placeholder="Full Name" value="Full Name"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-mobile fa-lg"></i></span>
-                                        <input type="text" class="form-control" name="" placeholder="Mobile" value="9876543210">
+                                        <spring:input type="text" class="form-control" path="mobileNo" placeholder="Mobile" value="9876543210"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope-open fa-lg"></i></span>
-                                        <input  type="text" class="form-control"  placeholder="Email" value="yourname@gmail.com">
+                                        <spring:input  type="text" class="form-control"  path="email" placeholder="Email" value="yourname@gmail.com"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-map-marker fa-lg"></i></span>
-                                        <input id="" type="text" class="form-control" name="address" placeholder="Address" value="h, Sec 33">
+                                        <spring:input id="" type="text" class="form-control" path="address" placeholder="Address" value="h, Sec 33"/>
                                     </div>
                                 </div>
                                     <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-map-marker fa-lg"></i></span>
-                                        <input id="" type="text" class="form-control" name="city" placeholder="City" value="Noida">
+                                        <spring:input id="" type="text" class="form-control" path="city" placeholder="City" value="Noida"/>
                                     </div>
                                 </div>
                               <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-map-marker fa-lg"></i></span>
-                                        <input id="" type="text" class="form-control" name="pin" placeholder="Pin Code" value="400032">
+                                        <spring:input id="" type="text" class="form-control" path="pincode" placeholder="Pin Code" value="400032"/>
                                     </div>
                                 </div>
                                 <div class="text-right">

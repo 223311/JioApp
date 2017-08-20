@@ -1,20 +1,22 @@
 package com.jio.booking.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jio.booking.bo.UserForm;
 import com.jio.booking.dao.UserDao;
 import com.jio.booking.model.User;
 
-@Transactional
+@Service
 public class JioBookingServiceImpl implements JioBookingService {
 
 	@Autowired
 	UserDao userdao;
 
-	@Transactional(readOnly = false)
 	@Override
+	@Transactional(readOnly = false)
+
 	public void bookJioPhone(UserForm userForm) {
 		User user = new User();
 		user.setFullName(userForm.getFullName());

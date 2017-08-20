@@ -14,7 +14,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void save(User user) {
 
-		hibernateTemplate.save(user);
+		hibernateTemplate.saveOrUpdate(user);
 	}
 
 }
