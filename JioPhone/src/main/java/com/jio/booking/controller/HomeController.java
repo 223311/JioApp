@@ -6,12 +6,11 @@
 package com.jio.booking.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.jio.booking.model.User;
+import com.jio.booking.bo.UserForm;
 
 /**
  *
@@ -22,8 +21,12 @@ public class HomeController {
 
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String home() {
-		return "jio-phone-booking-1500";
+		return "redirect:free-jio-phone-pre-booking";
 	}
 
+	@RequestMapping(value="free-jio-phone-pre-booking", method = RequestMethod.GET)
+	public String bookingForm(@ModelAttribute("booking") UserForm form) {
+		return "free-jio-phone-pre-booking";
+	}
 
 }

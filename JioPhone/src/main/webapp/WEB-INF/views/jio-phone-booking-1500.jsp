@@ -35,7 +35,6 @@ font-family:"JioTypeW04-Light";
 <h1 class="panel-title">Reliance Jio Phone Booking at Rs.1500</h1>
 </div>
 <div class="panel-body">
-<div class="container">
 
 <h2>Jio Phone Pre Booking Subscription From</h2>
 <form class="well form-horizontal" action=" " method="post"  id="contact_form">
@@ -150,9 +149,10 @@ font-family:"JioTypeW04-Light";
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
   </div>
 </div>
+
 </form>
 </div>
-</div>
+<img src="resources/jio-free-phone-booking.jpg" class="pull-right img-responsive" alt="jio-phone"/>
     </div><!-- /.container -->
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
 <script>  $(document).ready(function() {
