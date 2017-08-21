@@ -33,13 +33,25 @@ public class HomeController {
 	public String bookingForm(@ModelAttribute("booking") UserForm form) {
 		return "free-jio-phone-pre-booking";
 	}
+	
+	@RequestMapping(value = "free-jio-phone-booking-share")
+	public String share() {
+		System.out.println("Entered into Share");
+		return "free-jio-phone-booking-share";
+	}
 
-	@RequestMapping(value = "book-now", method = RequestMethod.POST)
+	@RequestMapping(value = "free-jio-phone-pre-booking", method = RequestMethod.POST)
 	public String bookingFormSubmit(@ModelAttribute("booking") UserForm form) {
 		System.out.println(form);
 		service.bookJioPhone(form);
 
-		return "redirect:/#menu1";
+		return "forward:free-jio-phone-booking-share";
+	}
+	
+	@RequestMapping(value = "free-jio-phone-booking-final", method = RequestMethod.GET)
+	public String finalSubmit() {
+
+		return "free-jio-phone-booking-final";
 	}
 
 }

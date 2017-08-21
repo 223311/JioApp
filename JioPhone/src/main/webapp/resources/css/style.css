@@ -19,20 +19,20 @@
 	height: 300px;
 	position: relative;
 /* 	padding: 20px 10px 20px 10px !important; */
-	background: #fbfbfb;
-	background: #dae2f8; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #dae2f8, #d6a4a4);
+	background: #1c2886;
+	background: #1c2886; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1c2886, #1c2886);
 	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #dae2f8, #d6a4a4);
+	background: linear-gradient(to right, #1c2886, #1c2886);
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background: #4ca1af; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #4ca1af, #c4e0e5);
+	background: #1c2886; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1c2886, #1c2886);
 	/* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #4ca1af, #c4e0e5);
-	background: #1d2b64; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #1d2b64, #f8cdda);
+	background: #1c2886; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1c2886, #1c2886);
 	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #1d2b64, #f8cdda);
+	background: linear-gradient(to right, #1c2886, #1c2886);
 }
 
 .profile-layout .profile-img-section .profile-img {
